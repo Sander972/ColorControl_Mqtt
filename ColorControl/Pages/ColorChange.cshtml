@@ -1,0 +1,62 @@
+﻿@page
+@model ColorControl.Pages.ColorChangeModel
+@{
+    ViewData["Title"] = "ColorChange";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello</h1>
+    <p>Change Color!</p>
+</div>
+
+<form method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Lamps's name!</span>
+        </div>
+        <input asp-for="Input.NameLamp" type="text" class="form-control" placeholder="name" aria-label="Email" aria-describedby="basic-addon1">
+    </div>
+    <!--
+    <div asp-for="Input.Color" class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pick your color!
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">Black</a>
+            <a class="dropdown-item">DarkBlue</a>
+            <a class="dropdown-item">DarkGreen</a>
+            <a class="dropdown-item">DarkRed</a>
+            <a class="dropdown-item">DarkMagenta</a>
+            <a class="dropdown-item">DarkYellow</a>
+            <a class="dropdown-item">Gray</a>
+            <a class="dropdown-item">DarkGray</a>
+            <a class="dropdown-item">Blue</a>
+            <a class="dropdown-item">Green</a>
+            <a class="dropdown-item">Cyan</a>
+            <a class="dropdown-item">Red</a>
+            <a class="dropdown-item">Magenta</a>
+            <a class="dropdown-item">Yellow</a>
+        </div>
+    </div>
+   -->
+    
+    <div  class="bootstrap-select-wrapper">
+        <label>Etichetta</label>
+        <select title="Scegli una opzione" asp-for="Input.Color">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+        </select>
+    </div>
+    
+    <br />
+
+    <div class="align-content-end">
+        <button type="submit" class="btn btn-primary">send</button>
+    </div>
+
+    <br />
+
+    <div asp-validation-summary="All"></div>
+</form>
